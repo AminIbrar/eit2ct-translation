@@ -1,0 +1,67 @@
+dataset_params:
+  train_path: 'path to train data'
+  val_path: 'path to validation data'
+  test_path: 'path to test data'
+  im_channels : 1
+  im_size : 256
+  name: 'ct_cond'
+
+diffusion_params:
+  num_timesteps : 1000
+  beta_start : 0.0001
+  beta_end : 0.02
+
+dit_params:
+  patch_size : 2
+  num_layers : 8
+  hidden_size : 512
+  num_heads : 4
+  head_dim : 64
+  timestep_emb_dim : 256
+
+
+autoencoder_params:
+  z_channels: 4
+  latent_size: 32
+  codebook_size : 8192
+  down_channels : [64, 128, 256, 256]
+  mid_channels : [256, 256]
+  down_sample : [True, True, True]
+  attn_down : [False, False, False]
+  norm_channels: 32
+  num_heads: 2
+  num_down_layers : 3
+  num_mid_layers : 3
+  num_up_layers : 3
+
+
+
+train_params:
+  seed : 1111
+  task_name: 'ct_cond'
+  ldm_batch_size: 16
+  autoencoder_batch_size: 4
+  disc_start: 15000
+  disc_weight: 0.5
+  codebook_weight: 1
+  commitment_beta: 0.2
+  perceptual_weight: 1
+  kl_weight: 0.00001
+  ldm_epochs: 3000
+  autoencoder_epochs: 2000
+  num_samples: 500
+  num_grid_rows: 2
+  ldm_lr: 0.0001
+  autoencoder_lr: 0.00001
+  autoencoder_acc_steps: 4
+  autoencoder_img_save_steps: 64
+  save_latents : False
+
+  use_adversarial: True
+  use_lpips: True
+  use_mse: True
+
+  vqvae_latent_dir_name: 'vqvae_latents'
+  dit_ldm_ckpt_name: 'dit_ldm_ckpt.pth'
+  vqvae_autoencoder_ckpt_name: 'vqvae_autoencoder_ckpt.pth'
+  vqvae_discriminator_ckpt_name: 'vqvae_discriminator_ckpt.pth'
