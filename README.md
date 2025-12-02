@@ -1,6 +1,6 @@
 # EIT-to-CT-Cross-Modality-Translation-Using-Diffusion-Transformer
 
-This repo contains code for translating Electrical Impedance Tomography (EIT) voltages into CT-like (sCT) images using a conditional diffusion-transformer. The code is complete, and the repo will be improved and documented further soon.
+This repo contains code for translating Electrical Impedance Tomography (EIT) voltages into CT-like (sCT) images using a conditional diffusion-transformer. The code is complete, with documentation and refinements to be added soon.
 
 <p align="center">
   <img src="Methodology.jpg" alt="EIT→CT diffusion transformer overview" width="750">
